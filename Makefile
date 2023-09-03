@@ -17,7 +17,7 @@ git:
 		@echo $(COMMIT_MESSAGE_PROMPT); \
 	read COMMITMESSAGE; \
 	git commit -m "$$COMMITMESSAGE"
-		@echo $$(BRANCH_PROMT); \
+		@echo $(BRANCH_PROMT); \
 	read BRANCH; \
 	git push origin $$BRANCH
 		@echo "Repository updated successfully on branch: $$BRANCH" 
