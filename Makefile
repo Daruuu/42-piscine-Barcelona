@@ -1,6 +1,6 @@
-
 COMMIT_MESSAGE_PROMPT = "Add the commit message:"
 BRANCH_PROMT = "Enter branch (main):"
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -11,18 +11,21 @@ clean:
 
 #script to automate my repository update
 
-gitpush:
+git:
 	git status --porcelain
 	git add .
 		@echo $(COMMIT_MESSAGE_PROMPT); \
 	read COMMITMESSAGE; \
 	git commit -m "$$COMMITMESSAGE"
-		@echo $(BRANCH_PROMT); \
-	git push origin  \
-		@echo "Repository updated successfully on branch $$BRANCH" 
+		@echo $$(BRANCH_PROMT); \
+	read BRANCH; \
+	git push origin $$BRANCH
+		@echo "Repository updated successfully on branch: $$BRANCH" 
 	git log -n 3
 
+# compile wit flags more easy
 cc:
-	cc -Wall -Wextra -Werror read FILE; \
+	$(CC) $(CFLAGS) read FILE.c
 
-.PHONY: default clean gitpush
+.PHONY: default clean git cc
+
