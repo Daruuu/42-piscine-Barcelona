@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Find and delete all "a.out" files in subdirectories
 
-cleanout:
+clean:
 	find . -type f -name "a.out" -exec rm -f {} \;
 
 #script to automate my repository update
@@ -18,12 +18,11 @@ gitpush:
 	read COMMITMESSAGE; \
 	git commit -m "$$COMMITMESSAGE"
 		@echo $(BRANCH_PROMT); \
-	read BRANCH; \
-	git push origin $$BRANCH; \
+	git push origin  \
 		@echo "Repository updated successfully on branch $$BRANCH" 
 	git log -n 3
 
 cc:
 	cc -Wall -Wextra -Werror read FILE; \
 
-.PHONY: default cleanout gitpush
+.PHONY: default clean gitpush
