@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 15:15:54 by dasalaza          #+#    #+#             */
-/*   Updated: 2023/09/04 15:31:03 by dasalaza         ###   ########.fr       */
+/*   Created: 2023/09/04 17:20:18 by dasalaza          #+#    #+#             */
+/*   Updated: 2023/09/04 17:28:22 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char *c)
+void	ft_putchar(char c)
 {
-  write(1, c, 1);
+	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+int	main(int argc, char **argv)
 {
-  while (*str)
-	ft_putchar(str++);
-}
-/*
-int	main()
-{
-  char	*str;
+	int	i;
 
-  str = "hello world!";
-  ft_putstr(str);
+	i = 1;
 
-  return (0);
+	while (i < argc)
+	{
+
+
+	}
+
+	return (0);
 }
-*/

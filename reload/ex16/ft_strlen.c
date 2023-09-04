@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 15:15:54 by dasalaza          #+#    #+#             */
-/*   Updated: 2023/09/04 15:31:03 by dasalaza         ###   ########.fr       */
+/*   Created: 2023/09/04 15:32:24 by dasalaza          #+#    #+#             */
+/*   Updated: 2023/09/04 15:37:47 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char *c)
+#include <stdio.h>
+int	ft_strlen(char *str)
 {
-  write(1, c, 1);
-}
+	int	i;
 
-void	ft_putstr(char *str)
-{
-  while (*str)
-	ft_putchar(str++);
+	i = 0;
+	while (*str)
+	{
+		str++;
+		i++;
+	}
+	return (i);
 }
 /*
-int	main()
+ int	main()
 {
-  char	*str;
+	char	*str;
 
-  str = "hello world!";
-  ft_putstr(str);
+	str = "hello world";
+	//ft_strlen(str);
+	printf("%d", ft_strlen(str));
 
-  return (0);
+	return (0);
 }
 */

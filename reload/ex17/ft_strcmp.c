@@ -1,35 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dasalaza <dasalaza@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 15:15:54 by dasalaza          #+#    #+#             */
-/*   Updated: 2023/09/04 15:31:03 by dasalaza         ###   ########.fr       */
+/*   Created: 2023/09/04 15:38:40 by dasalaza          #+#    #+#             */
+/*   Updated: 2023/09/04 16:23:55 by dasalaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <string.h>
+#include <stdio.h>
 
-void	ft_putchar(char *c)
+int	ft_strcmp(char *s1, char *s2)
 {
-  write(1, c, 1);
-}
+	int	i;
+	int	j;
 
-void	ft_putstr(char *str)
-{
-  while (*str)
-	ft_putchar(str++);
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
 /*
 int	main()
 {
-  char	*str;
+	char	*s1;
+	char	*s2;
+	int		result;
 
-  str = "hello world!";
-  ft_putstr(str);
+	s1 = "hello world";
+	s2 = "hello worlj";
+	result = ft_strcmp(s1, s2);
+	printf("%d", result);
 
-  return (0);
+	return (0);
 }
 */
